@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Mar 21, 2023 at 07:47 AM
--- Server version: 10.6.4-MariaDB-1:10.6.4+maria~focal
--- PHP Version: 8.0.19
+-- Erstellungszeit: 21. Mrz 2023 um 08:54
+-- Server-Version: 10.6.4-MariaDB-1:10.6.4+maria~focal
+-- PHP-Version: 8.1.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mychat`
+-- Datenbank: `mychat`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Tabellenstruktur für Tabelle `messages`
 --
 
 CREATE TABLE `messages` (
@@ -34,7 +34,7 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `messages`
+-- Daten für Tabelle `messages`
 --
 
 INSERT INTO `messages` (`id`, `user_id`, `message`) VALUES
@@ -43,63 +43,64 @@ INSERT INTO `messages` (`id`, `user_id`, `message`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Tabellenstruktur für Tabelle `users`
 --
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Daten für Tabelle `users`
 --
 
-INSERT INTO `users` (`id`, `name`) VALUES
-(1, 'adfa'),
-(2, 'Roger'),
-(3, 'Samual'),
-(4, 'Johnny\r\n');
+INSERT INTO `users` (`id`, `name`, `password`) VALUES
+(1, 'adfa', ''),
+(2, 'Roger', ''),
+(3, 'Samual', ''),
+(4, 'Johnny\r\n', '');
 
 --
--- Indexes for dumped tables
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Indexes for table `messages`
+-- Indizes für die Tabelle `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `users`
+-- Indizes für die Tabelle `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT for table `messages`
+-- AUTO_INCREMENT für Tabelle `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Constraints for dumped tables
+-- Constraints der exportierten Tabellen
 --
 
 --
--- Constraints for table `messages`
+-- Constraints der Tabelle `messages`
 --
 ALTER TABLE `messages`
   ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
