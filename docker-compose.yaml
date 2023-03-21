@@ -6,7 +6,7 @@ services:
     command: '--default-authentication-plugin=mysql_native_password'
     volumes:
       - ./mariadb/mychat.sql:/docker-entrypoint-initdb.d/mychat.sql
-      - m321_project_mariadb:/var/lib/mysql
+      - mariadb:/var/lib/mysql
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=supersecret123
@@ -29,4 +29,4 @@ services:
       - 9200:80
 
 volumes:
-  m321_project_mariadb:
+  mariadb:
