@@ -16,6 +16,104 @@ body {
     vertical-align: middle;
 }
 
+.chat-card {
+    width: 50%;
+    max-width: 1000px;
+    padding: 0% 25% 0% 25%;
+}
+
+.chat-title { 
+    font-size: 42px; 
+    font-family: 'Avenir'; 
+    font-weight: 800; 
+    letter-spacing: 0.5px; 
+    color: #e8e8e8; 
+    padding-bottom: 12px; 
+}
+
+.messages {
+    margin-top: 24px;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.message-username {
+    background-color: #fa541c;
+    color: white;
+    font-family: "Avenir";
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.message-content {
+    background-color: #3e404b;
+    color: white;
+    font-family: "Avenir";
+    font-size: 18px;
+    padding: 12px 18px;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.message-form {
+    position: relative;
+    display: inline-block;
+    margin-top: 24px;
+    width: 100%;
+	color: white;
+}
+
+.message-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+  }
+  
+  .message-input input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #f2f2f2;
+  }
+  
+  .message-input input[type="text"]::placeholder {
+    color: #aaa;
+  }
+  
+  .message-input button {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .message-input button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .message-input button:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+  }
+  
+
 .form-card {
     width: 50%;
     max-width: 1000px;
@@ -35,8 +133,11 @@ body {
     font-size: 18px;
     font-family: 'Avenir';
     letter-spacing: 0.5px;
-    color: #afafaf;
+    color: white;
     padding-bottom: 24px;
+}
+.form-subtitle a {
+    color: white;
 }
 
 .auth {
