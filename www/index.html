@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Modul 321">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chat-Applikation</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="banner">
+                <h1>Chat Applikation</h1>
+                <span id="status"></span>
+                <input type="text" placeHolder="Chat room name" value="main" id="chatRoom" /><button id="roomBtn"> Chatraum beitreiten </button>
+            </div>
+            <div id="historyMsg">
+            </div>
+            <div class="controls" >
+                <div class="items">
+                    <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+                    <input id="clearBtn" type="button" value="Löschen" title="clear screen" />
+                </div>
+                <textarea id="messageInput" placeHolder="schreib eine Nachricht..."></textarea>
+                <input id="sendBtn" type="button" value="senden">
+            </div>
+        </div>
+        <div id="loginWrapper">
+            <p id="info">Verbindung zum Server herstellen</p>
+            <div id="nickWrapper">
+                <input type="text" placeHolder="nickname" id="nicknameInput" />
+                <input type="button" value="OK" id="loginBtn" />
+            </div>
+        </div>
+  
+        <script src="/socket.io/socket.io.js" onload="window.socketLoaded = true;"></script>
+        <script src="/scripts/app.js"></script>
+        <script>
+            window.onerror = function(error, url, line) {
+                alert('Encountered an error! Give this info to the devs: ' + error + ' at ' + url + ' on line ' + line);
+            };
+        </script>
+    </body>
+</html>
