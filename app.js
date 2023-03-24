@@ -27,7 +27,7 @@ if (env !== "production") {
 app.use(express.static("client"));
 // route for the homepage
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/client/index.html");
+  res.sendFile(__dirname + "/client/chatApplication.html");
 });
   // Initialize the websocket server
   initializeWebsocketServer(server);
@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
   const result = await executeSQL("SELECT * FROM users;");
   console.log(result);
   //start the web server
-  const serverPort = process.env.PORT || 3000;
+  const serverPort = process.env.PORT || 3000; 
   server.listen(serverPort, () => {
     console.log(
       `Express Server started on port ${serverPort} as '${env}' Environment`

@@ -10,7 +10,7 @@ body {
 .background {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(75deg, rgb(40,43,54) 0%, rgb(40,43,54) 50%, rgba(40,43,54,0.8) 100%);
+    background: linear-gradient(75deg, rgb(10, 8, 8) 0%, rgb(92, 103, 95) 50%, rgba(245, 137, 6, 0.8) 100%);
     /* Vertical center */
     display: table-cell;
     vertical-align: middle;
@@ -111,6 +111,43 @@ body {
   .message-input button:active {
     background-color: #3e8e41;
     transform: scale(0.95);
+  }
+  
+  /* Style for message form */
+.message-form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .message-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .message-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style for logout link */
+  .logout a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .logout a:hover {
+    color: #fa541c;
+    text-decoration: underline;
   }
   
 
